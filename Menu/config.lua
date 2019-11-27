@@ -12,13 +12,17 @@ local Touches = {
 ["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
 }
 
-
+RebornProject = "RebornProject_TopVote" -- Nom de la ressource
 ToucheClavier = Touches["F6"] -- Touche d'ouverture du menu
 Langue = "fr" -- Choix de la langue (Français = fr,Anglais = en,Espagnol = es)
 Administration = false -- Activer / Desactiver la whiteliste
 EnvoiNotification = true -- Activer / Desactiver l'envoi de notification aux joueurs connecte
 JouerLaMusiqueDuPalier = true -- Activer / Desactiver la musique au palier atteind
 EnvoiNotification = true -- Activer / Desactiver le bot d'envoi de notification Discord
+SuppressionTotaleDeLaBdd = true -- Ici l'activation par true et la desactivation par false du systeme de suppression de bdd chaque 01 du mois
+JourDeLaSuppression = "01" -- Ici l'entree du jour a la quelle chaque mois la suppression se fera
+HeureMinimumMAJ = "15:00:00" -- Ici le reglage de l'heure minimum a laquelle l'action de suppression de la base de donnee se fera au prochain lancement du serveur (Il est recommander de faire en sorte que votre dernier reboot serveur ce fasse entre cette tranche d'horaire )
+HeureMaximumMAJ = "23:30:00" -- Ici le reglage de l'heure maximum a laquelle l'action de suppression de la base de donnee se fera au prochain lancement du serveur (Il est recommander de faire en sorte que votre dernier reboot serveur ce fasse entre cette tranche d'horaire )
 OptionTTS = false -- Activer / Desactiver la lecture de notification par tts discord
 TitreNotifDiscord = "TOP SERVEUR" -- Titre de la notification discord
 UrlImageDiscord = "https://imgur.com/DmdnCIw" -- Lien de l'image qui s'affichera dans la notification discord
@@ -54,6 +58,7 @@ Locales = {
         ['notifpourvote'] = ' Vient de voter sur Top Serveur c\'est son : ',
         ['notifpourvote2'] = '1',
         ['notifpourvote3'] = ' vote(s)',
+        ['printserveur'] = '### LA BASE DE DONNEE DES VOTES MENSUEL DE TOP SERVEUR A ETAIT CORRECTEMENT REMIS A ZERO ###',
     },
 
     ['en'] ={
@@ -75,6 +80,7 @@ Locales = {
         ['notifpourvote'] = ' Just vote on Top Server this is his : ',
         ['notifpourvote2'] = '1',
         ['notifpourvote3'] = ' vote(s)',
+        ['printserveur'] = '### THE DATASHEET OF THE MONTHLY VOTES OF TOP SERVER WAS CORRECTLY REFERRED TO ZERO ###',
     },
 
     ['es'] ={
@@ -96,5 +102,6 @@ Locales = {
         ['notifpourvote'] = ' Solo vote en el servidor superior, este es su : ',
         ['notifpourvote2'] = '1',
         ['notifpourvote3'] = ' voto(s)',
+        ['printserveur'] = '### LA HOJA DE DATOS DE LOS VOTOS MENSUALES DEL SERVIDOR SUPERIOR SE REFERIÓ CORRECTAMENTE A CERO ###',
     },
 }
