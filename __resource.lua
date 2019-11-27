@@ -17,5 +17,5 @@ server_scripts {
 	"lib/VotePlugin.net.dll",
 	'@mysql-async/lib/MySQL.lua',
 	'Menu/config.lua',
-	'Menu/Serveur/server.lua'
+	'Menu/Serveur/serveur.lua'
 }
