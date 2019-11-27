@@ -107,8 +107,8 @@ end)
 
 -- NE PAS TOUCHER !!!
 
-local CurrentVersion = '1.0.0'
-local GithubResourceName = 'RebornProject_TopVote'
+local CurrentVersion = '1.0.1'
+local GithubResourceName = GetCurrentResourceName()
 local Name = 'Walter White'
 
 PerformHttpRequest('https://raw.githubusercontent.com/WalterWhite84/'.. GithubResourceName .. '/master/Version', function(Error, NewestVersion, Header)
