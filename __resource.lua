@@ -4,7 +4,7 @@ ui_page('lib/index.html')
 
 files {
     'lib/index.html',
-    'Son/Musique.ogg',
+    'lib/Son/Musique.ogg',
 }
 
 client_script {
@@ -17,5 +17,5 @@ server_scripts {
 	"lib/VotePlugin.net.dll",
 	'@mysql-async/lib/MySQL.lua',
 	'Menu/config.lua',
-	'Menu/Serveur/serveur.lua',
+	'Menu/Serveur/server.lua'
 }
