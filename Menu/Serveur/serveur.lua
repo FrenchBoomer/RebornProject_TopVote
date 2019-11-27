@@ -87,6 +87,24 @@ AddEventHandler('RebornProject:SuppressionTotaleDeLaBaseDeDonnee', function()
     MySQL.Async.execute("DELETE FROM votes_topserveur WHERE recuperation=@recuperation",{['@recuperation'] = "active"})
 end)
 
+AddEventHandler('onResourceStart', function(res)
+
+	local NomDeLaRessource = GetCurrentResourceName()
+	local HeureDuServeur = os.date('%H:%M:%S', os.time())
+	local JourDuServeur = os.date("%d")
+
+	if SuppressionTotaleDeLaBdd == true then
+		if NomDeLaRessource == RebornProject then
+			if HeureDuServeur < HeureMaximumMAJ and HeureDuServeur > HeureMinimumMAJ then
+				if JourDuServeur == JourDeLaSuppression then
+					MySQL.Async.execute("DELETE FROM votes_topserveur WHERE recuperation=@recuperation",{['@recuperation'] = "active"})
+					print(LangueChoisie.printserveur)
+				end
+			end
+		end
+	end
+end)
+
 -- NE PAS TOUCHER !!!
 
 local CurrentVersion = '1.0.0'
