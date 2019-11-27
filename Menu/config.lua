@@ -31,11 +31,11 @@ VolumeDeLaMusique = 0.1 -- Volume de la musique au palier atteind
 LienWebHook = "Link_Edit"  -- Lien webhook pour discord qui vous sert a recevoir une notification par votes recus sur top serveur
 
 WhiteListe = {
-    steam = "steam:ID",
-    steam = "steam:ID",
-    steam = "steam:ID",
-    steam = "steam:ID",
-    steam = "steam:ID",
+    {steam = "steam:ID"},
+    {steam = "steam:ID"},
+    {steam = "steam:ID"},
+    {steam = "steam:ID"},
+    {steam = "steam:ID"},
 }
 
 Locales = {
