@@ -36,6 +36,14 @@ AddEventHandler("RebornProject:JouerLaMusique", function()
     })
 end)
 
+function VerificationWhiteListe()
+    for k, v in ipairs(WhiteListe) do
+        if IDENTIFIANTDUJOUEUR == v.steam then
+            return true
+        end     
+    end
+end
+
 Citizen.CreateThread(function()
 
     WarMenu.CreateMenu('MenuVotesTopServeur')
@@ -108,9 +116,10 @@ Citizen.CreateThread(function()
         if IsControlJustPressed(1, ToucheClavier) then
             TriggerServerEvent("RebornProject:RecuperationDesVotesBDD")
             Wait(200)
-            for k, v in pairs(WhiteListe) do
             if Administration == true then
-                if IDENTIFIANTDUJOUEUR == v.steam then
+                local VerifWL = VerificationWhiteListe()
+                Wait(100)
+                if VerifWL == true then
                     WarMenu.OpenMenu("MenuVotesTopServeur")
                 else
                     PlaySound(GetPlayerServerId(GetPlayerPed(-1)), "CHECKPOINT_MISSED", "HUD_MINI_GAME_SOUNDSET", 0, 0, 1)
@@ -118,7 +127,6 @@ Citizen.CreateThread(function()
                 end
             else
                 WarMenu.OpenMenu("MenuVotesTopServeur")
-            end
             end
         end
         if WarMenu.IsMenuAboutToBeClosed("MenuVotesTopServeur") then
